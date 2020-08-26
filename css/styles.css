@@ -1,0 +1,146 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --nav-primary-bg: #2A2E33;
+  --nav-secondary-bg: #28313E;
+  --nav-accent: #8F96CA;
+  --nav-active: #37B44A;
+  --nav-text: #FFFFFF;
+}
+
+body {
+  overflow-x: hidden;
+}
+
+main {
+  margin: 5rem 0;
+}
+main p {
+  margin: 3rem;
+}
+main h1 {
+  width: 100vw;
+  text-align: center;
+}
+
+.navbar {
+  background-color: var(--nav-primary-bg);
+  width: 100vw;
+  height: 3rem;
+  position: fixed;
+  bottom: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.navbar a {
+  color: var(--nav-text);
+  text-decoration: none;
+}
+.navbar .nav-link {
+  padding: 0 2rem;
+  list-style: none;
+  height: 100%;
+  display: flex;
+  align-items: center;
+}
+.navbar .nav-link:hover {
+  border-bottom: 0.3rem solid var(--nav-active);
+}
+.navbar_menu {
+  display: flex;
+  height: 100%;
+}
+.navbar_menu .nav-link {
+  font-size: 0.7rem;
+}
+.navbar_menu .nav-link a {
+  display: flex;
+  flex-direction: column;
+}
+.navbar_menu .nav-link .fas {
+  text-align: center;
+  font-size: 1.3rem;
+}
+.navbar_logo {
+  background-color: var(--nav-active);
+  position: fixed;
+  top: 0;
+  width: 100vw;
+  height: 3rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 1.7rem;
+  font-weight: 600;
+}
+.navbar .hamburger {
+  display: flex;
+  flex-direction: column;
+  color: var(--nav-text);
+  font-size: 0.7rem;
+  cursor: pointer;
+}
+.navbar .hamburger .fas {
+  font-size: 1.3rem;
+  text-align: center;
+}
+.navbar #toggle {
+  display: none;
+}
+.navbar #toggle:checked + .navbar_sub-menu {
+  display: block;
+}
+.navbar_sub-menu {
+  display: none;
+  position: fixed;
+  background-color: var(--nav-secondary-bg);
+  right: 0;
+  bottom: 3rem;
+  width: 35vw;
+  padding: 1rem 0rem;
+  border-top-left-radius: 1rem;
+}
+.navbar_sub-menu .nav-link {
+  margin-top: 1rem;
+}
+
+@media only screen and (min-width: 850px) {
+  .navbar {
+    top: 0;
+    justify-content: space-around;
+  }
+  .navbar_logo {
+    width: auto;
+    position: relative;
+  }
+  .navbar .hamburger {
+    display: none;
+  }
+  .navbar_sub-menu {
+    display: flex;
+    position: relative;
+    width: auto;
+    bottom: inherit;
+    padding: inherit;
+    background-color: inherit;
+  }
+  .navbar_menu .nav-link a {
+    display: flex;
+    flex-direction: row;
+  }
+  .navbar_menu .nav-link .fas {
+    font-size: 0.9rem;
+  }
+  .navbar .nav-link {
+    font-size: 0.9rem;
+    padding: 0 !important;
+    display: flex;
+    margin-top: 0;
+    margin-left: 2rem;
+  }
+}
